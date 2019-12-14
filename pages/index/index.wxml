@@ -1,0 +1,23 @@
+<!--pages/index/index.wxml-->
+<view class="box">
+  <view class="section">
+    <picker bindchange="bindMonthChange" value="{{index}}" range="{{setA}}">
+      <view class="picker">选择月份 </view>
+    </picker>
+  </view>
+  <view class="section">
+    <picker bindchange="bindPickerChange" value="{{index}}" range="{{brr}}">
+      <view class="picker">选择日期</view>
+    </picker>
+  </view>
+</view>
+<block wx:for='{{dataList}}' wx:key='index'>
+  <view class="root" data-url='{{item.link}}' bindtap="goDetail">
+    <view class="top">
+      <image src="{{item.pic_share}}" wx:if='{{item.cover}}'></image>
+      <rich-text nodes='{{item.title}}' class="title"></rich-text>
+      <view class="year">{{item.year}}年{{yueRi}}</view>
+    </view>
+    <rich-text nodes='{{item.desc}}' class="desc"></rich-text>
+  </view>
+</block>
