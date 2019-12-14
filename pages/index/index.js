@@ -1,4 +1,4 @@
-import { ajax } from '../../utils/ajax.js';
+import ajax from '../../utils/ajax.js';
 Page({
   /**
    * 页面的初始数据
